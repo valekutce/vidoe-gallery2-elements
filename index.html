@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Video Gallery</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="videos">
+            <video class="active" src="https://media.istockphoto.com/videos/wine-tasting-in-the-countryside-video-id1201824016" muted></video>
+            <video src="https://media.istockphoto.com/videos/family-walking-on-the-beach-piggyback-ride-video-id1212640596" muted></video>
+            <video src="https://media.istockphoto.com/videos/swimmer-training-front-crawl-and-taking-deep-breaths-camera-follows-video-id1286680037" muted></video>
+            <video src="https://media.istockphoto.com/videos/young-woman-on-inflatable-ring-taking-selfies-half-underwater-in-video-id1328715976" muted></video>
+        </div>
+        <div class="main-video">
+            <video src="videos/video1.mp4" muted controls autoplay></video>
+        </div>
+    </div>
+
+    <!-- jquery cdn link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $('.videos video').click(function(){
+
+                $(this).addClass('active').siblings().removeClass('active');
+
+                var src = $(this).attr('src');
+                $('.main-video video').attr('src',src);
+            });
+        });
+
+    </script>
+
+</body>
+</html>
